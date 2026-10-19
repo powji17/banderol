@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/theme/app_theme.dart';
+import 'core/widgets/brand_logo.dart';
 import 'features/items/home_screen.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class BanderolApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system, // FR-60: Mengikuti pengaturan tema sistem
-      home: const HomeScreen(),
+      home: const SplashGate(child: HomeScreen()),
     );
   }
 }

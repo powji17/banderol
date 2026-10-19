@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/database/app_database.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/utils/formatters.dart';
+import '../../core/widgets/brand_logo.dart';
 import '../backup/settings_backup_screen.dart';
 import '../categories/categories_screen.dart';
 import '../units/units_screen.dart';
@@ -84,9 +85,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Banderol',
-          style: TextStyle(fontWeight: FontWeight.bold),
+        title: const Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            BrandLogo(size: 28),
+            SizedBox(width: 10),
+            Text(
+              'Banderol',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ],
         ),
         actions: [
           IconButton(
